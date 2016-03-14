@@ -15,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        //UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        UITableView.appearance().separatorInset = UIEdgeInsetsZero
+        UITableViewCell.appearance().separatorInset = UIEdgeInsetsZero
+        UITableView.appearance().separatorStyle = .SingleLine
+        UITableView.appearance().layoutMargins = UIEdgeInsetsZero
+        UITableViewCell.appearance().layoutMargins = UIEdgeInsetsZero
+        UITableViewCell.appearance().preservesSuperviewLayoutMargins = false
         // Override point for customization after application launch.
         return true
     }
