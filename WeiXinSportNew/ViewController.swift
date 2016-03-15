@@ -159,6 +159,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         {
             cell = NSBundle.mainBundle().loadNibNamed("UserCell", owner: self, options: nil).first as? UserCell
         }
+        cell?.selectionStyle = .None
         cell?.contentView.alpha = 0.8
         if indexPath.section == 0
         {
@@ -192,6 +193,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.separatorInset = UIEdgeInsetsZero
         cell.layoutMargins = UIEdgeInsetsZero
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("DetailSegue", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {

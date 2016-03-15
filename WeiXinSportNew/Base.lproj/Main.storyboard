@@ -92,15 +92,122 @@
                         <outlet property="bgImageView" destination="9WB-ci-CV9" id="OhJ-6E-Fhq"/>
                         <outlet property="contentView" destination="fhm-2a-mYt" id="Xok-p8-YN3"/>
                         <outlet property="winnerView" destination="8SH-9D-F1p" id="Wh5-Jj-rdr"/>
+                        <segue destination="CzS-6X-uXW" kind="show" identifier="DetailSegue" id="8iY-lc-cKT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50h-pM-3Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1264.5" y="329.5"/>
+            <point key="canvasLocation" x="1177.5" y="320.5"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="cIZ-b9-s8h">
+            <objects>
+                <viewController id="CzS-6X-uXW" customClass="DetailViewController" customModule="WeiXinSportNew" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="etx-hr-kXX"/>
+                        <viewControllerLayoutGuide type="bottom" id="fRa-MO-2xW"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Ai5-8V-zn7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-N1-nqv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已占领666位朋友的封面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgN-P4-hN5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="gMf-Dm-WxN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAm-SK-xdl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ee0-gT-3Zj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="717"/>
+                                        <subviews>
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-EZ-sNb">
+                                                <rect key="frame" x="0.0" y="268" width="375" height="429"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-Tm-d24" customClass="GraphView" customModule="WeiXinSportNew" customModuleProvider="target">
+                                                        <rect key="frame" x="18" y="52" width="338" height="155"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                                <color key="value" red="0.12549019610000001" green="0.70588235290000001" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                                <color key="value" red="0.1019607843" green="0.52941176469999995" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="graphStartColor">
+                                                                <color key="value" red="0.067965196408696527" green="0.83824013157894739" blue="0.44912488815976259" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="graphEndColor">
+                                                                <color key="value" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Gwv-Tm-d24" secondAttribute="trailing" constant="19" id="Odt-0R-Lgi"/>
+                                                    <constraint firstItem="Gwv-Tm-d24" firstAttribute="top" secondItem="H8g-EZ-sNb" secondAttribute="top" constant="52" id="uzW-hy-wWp"/>
+                                                    <constraint firstItem="Gwv-Tm-d24" firstAttribute="leading" secondItem="H8g-EZ-sNb" secondAttribute="leading" constant="18" id="wKx-73-old"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Gwv-Tm-d24" secondAttribute="bottom" constant="222" id="zkp-be-rZI"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="H8g-EZ-sNb" firstAttribute="leading" secondItem="ee0-gT-3Zj" secondAttribute="leading" id="8R7-BI-7HW"/>
+                                            <constraint firstItem="H8g-EZ-sNb" firstAttribute="top" secondItem="ee0-gT-3Zj" secondAttribute="top" constant="268" id="RMD-VH-wLD"/>
+                                            <constraint firstAttribute="height" constant="717" id="hZy-pi-Aaj"/>
+                                            <constraint firstAttribute="trailing" secondItem="H8g-EZ-sNb" secondAttribute="trailing" id="spM-LP-dpO"/>
+                                            <constraint firstAttribute="bottom" secondItem="H8g-EZ-sNb" secondAttribute="bottom" constant="20" id="vM6-w8-l71"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ee0-gT-3Zj" firstAttribute="top" secondItem="KAm-SK-xdl" secondAttribute="top" id="9PC-5E-ak3"/>
+                                    <constraint firstItem="ee0-gT-3Zj" firstAttribute="centerX" secondItem="KAm-SK-xdl" secondAttribute="centerX" id="OEc-3J-g7b"/>
+                                    <constraint firstItem="ee0-gT-3Zj" firstAttribute="leading" secondItem="KAm-SK-xdl" secondAttribute="leading" id="PWC-B8-9Co"/>
+                                    <constraint firstAttribute="bottom" secondItem="ee0-gT-3Zj" secondAttribute="bottom" id="gpQ-LH-W4L"/>
+                                    <constraint firstAttribute="trailing" secondItem="ee0-gT-3Zj" secondAttribute="trailing" id="w7z-QK-201"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qgN-P4-hN5" secondAttribute="trailing" id="0PS-el-bQW"/>
+                            <constraint firstItem="bbU-N1-nqv" firstAttribute="leading" secondItem="Ai5-8V-zn7" secondAttribute="leading" id="67S-9O-FYP"/>
+                            <constraint firstItem="bbU-N1-nqv" firstAttribute="top" secondItem="Ai5-8V-zn7" secondAttribute="top" id="94J-hM-aYG"/>
+                            <constraint firstItem="fRa-MO-2xW" firstAttribute="top" secondItem="KAm-SK-xdl" secondAttribute="bottom" id="FAp-mh-A0S"/>
+                            <constraint firstItem="fRa-MO-2xW" firstAttribute="top" secondItem="bbU-N1-nqv" secondAttribute="bottom" id="I0Y-Xc-yOi"/>
+                            <constraint firstAttribute="trailing" secondItem="bbU-N1-nqv" secondAttribute="trailing" id="Ipe-OI-xAd"/>
+                            <constraint firstItem="qgN-P4-hN5" firstAttribute="leading" secondItem="Ai5-8V-zn7" secondAttribute="leading" id="PP3-q0-Qm9"/>
+                            <constraint firstItem="KAm-SK-xdl" firstAttribute="top" secondItem="etx-hr-kXX" secondAttribute="bottom" id="hVA-2f-jtn"/>
+                            <constraint firstAttribute="trailing" secondItem="KAm-SK-xdl" secondAttribute="trailing" id="jHv-Mr-bvw"/>
+                            <constraint firstItem="KAm-SK-xdl" firstAttribute="leading" secondItem="Ai5-8V-zn7" secondAttribute="leading" id="ldr-xp-eg1"/>
+                            <constraint firstItem="qgN-P4-hN5" firstAttribute="top" secondItem="etx-hr-kXX" secondAttribute="bottom" id="y9w-1Q-afc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beatLabel" destination="qgN-P4-hN5" id="Dgp-6U-SCR"/>
+                        <outlet property="bgImageView" destination="bbU-N1-nqv" id="fM9-bs-cML"/>
+                        <outlet property="contentView" destination="KAm-SK-xdl" id="721-tB-3vA"/>
+                        <outlet property="graphView" destination="Gwv-Tm-d24" id="Pd0-4l-rYW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9vQ-Qk-VAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1694.5" y="206.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="avatar.png" width="192" height="192"/>
-        <image name="bg.jpg" width="2448" height="3264"/>
+        <image name="bg.jpg" width="3264" height="2448"/>
     </resources>
 </document>
