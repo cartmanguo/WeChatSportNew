@@ -11,15 +11,16 @@
 		252AC94D1C966B03004E4A38 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 252AC94C1C966B03004E4A38 /* avatar.png */; };
 		252AC94F1C9683CC004E4A38 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 252AC94E1C9683CC004E4A38 /* UserCell.xib */; };
 		252AC9511C9683E8004E4A38 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252AC9501C9683E8004E4A38 /* UserCell.swift */; };
-		252AC9531C96868C004E4A38 /* 1154188.png in Resources */ = {isa = PBXBuildFile; fileRef = 252AC9521C96868C004E4A38 /* 1154188.png */; };
 		252AC9551C96BD8F004E4A38 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252AC9541C96BD8F004E4A38 /* GraphView.swift */; };
 		25554BFE1C91651D002E283A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25554BFD1C91651D002E283A /* AppDelegate.swift */; };
 		25554C001C91651D002E283A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25554BFF1C91651D002E283A /* ViewController.swift */; };
 		25554C031C91651D002E283A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25554C011C91651D002E283A /* Main.storyboard */; };
 		25554C051C91651D002E283A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25554C041C91651D002E283A /* Assets.xcassets */; };
 		25554C081C91651D002E283A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25554C061C91651D002E283A /* LaunchScreen.storyboard */; };
-		25554C101C916974002E283A /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25554C0F1C916974002E283A /* bg.jpg */; };
 		25A94F981C97D1960026FED0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A94F971C97D1960026FED0 /* DetailViewController.swift */; };
+		25A94F9C1C98F0970026FED0 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25A94F9B1C98F0970026FED0 /* bg.jpg */; };
+		25A94F9F1C98F2600026FED0 /* like_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A94F9D1C98F2600026FED0 /* like_gray.png */; };
+		25A94FA01C98F2600026FED0 /* like_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A94F9E1C98F2600026FED0 /* like_red.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,6 @@
 		252AC94C1C966B03004E4A38 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		252AC94E1C9683CC004E4A38 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		252AC9501C9683E8004E4A38 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
-		252AC9521C96868C004E4A38 /* 1154188.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1154188.png; sourceTree = "<group>"; };
 		252AC9541C96BD8F004E4A38 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		25554BFA1C91651D002E283A /* WeiXinSportNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiXinSportNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25554BFD1C91651D002E283A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,8 +36,10 @@
 		25554C041C91651D002E283A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25554C071C91651D002E283A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25554C091C91651D002E283A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25554C0F1C916974002E283A /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		25A94F971C97D1960026FED0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		25A94F9B1C98F0970026FED0 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		25A94F9D1C98F2600026FED0 /* like_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_gray.png; sourceTree = "<group>"; };
+		25A94F9E1C98F2600026FED0 /* like_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_red.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +83,9 @@
 				25554C041C91651D002E283A /* Assets.xcassets */,
 				25554C061C91651D002E283A /* LaunchScreen.storyboard */,
 				252AC94C1C966B03004E4A38 /* avatar.png */,
-				252AC9521C96868C004E4A38 /* 1154188.png */,
-				25554C0F1C916974002E283A /* bg.jpg */,
+				25A94F9B1C98F0970026FED0 /* bg.jpg */,
+				25A94F9D1C98F2600026FED0 /* like_gray.png */,
+				25A94F9E1C98F2600026FED0 /* like_red.png */,
 				25554C091C91651D002E283A /* Info.plist */,
 			);
 			path = WeiXinSportNew;
@@ -148,12 +151,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				25554C081C91651D002E283A /* LaunchScreen.storyboard in Resources */,
-				252AC9531C96868C004E4A38 /* 1154188.png in Resources */,
 				252AC94D1C966B03004E4A38 /* avatar.png in Resources */,
 				252AC94F1C9683CC004E4A38 /* UserCell.xib in Resources */,
+				25A94F9C1C98F0970026FED0 /* bg.jpg in Resources */,
 				25554C051C91651D002E283A /* Assets.xcassets in Resources */,
-				25554C101C916974002E283A /* bg.jpg in Resources */,
 				25554C031C91651D002E283A /* Main.storyboard in Resources */,
+				25A94FA01C98F2600026FED0 /* like_red.png in Resources */,
+				25A94F9F1C98F2600026FED0 /* like_gray.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

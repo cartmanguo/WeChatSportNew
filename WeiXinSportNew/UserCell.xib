@@ -67,12 +67,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3R-D4-oRo">
-                    <rect key="frame" x="352" y="36" width="15" height="15"/>
+                    <rect key="frame" x="352" y="36" width="16" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="15" id="bCn-YG-7e6"/>
-                        <constraint firstAttribute="height" constant="15" id="cGZ-c2-9Bv"/>
+                        <constraint firstAttribute="width" constant="16" id="bCn-YG-7e6"/>
+                        <constraint firstAttribute="height" constant="16" id="cGZ-c2-9Bv"/>
                     </constraints>
-                    <state key="normal" title="Button" image="1154188.png"/>
+                    <state key="normal" title="Button" image="like_gray.png"/>
+                    <state key="selected" image="like_red.png"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -82,7 +83,7 @@
                 <constraint firstItem="ayi-G1-ABI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="FkX-IP-pmn"/>
                 <constraint firstAttribute="bottom" secondItem="XrL-gK-kER" secondAttribute="bottom" constant="8" id="L9J-4B-HhC"/>
                 <constraint firstItem="aJ5-NN-a7P" firstAttribute="leading" secondItem="XrL-gK-kER" secondAttribute="trailing" constant="6" id="O85-fA-laa"/>
-                <constraint firstAttribute="trailing" secondItem="a3R-D4-oRo" secondAttribute="trailing" constant="8" id="POd-lY-onB"/>
+                <constraint firstAttribute="trailing" secondItem="a3R-D4-oRo" secondAttribute="trailing" constant="7" id="POd-lY-onB"/>
                 <constraint firstItem="XrL-gK-kER" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="RHC-At-ByM"/>
                 <constraint firstAttribute="bottom" secondItem="QVA-n9-g5W" secondAttribute="bottom" constant="13" id="TsG-V3-OHN"/>
                 <constraint firstItem="P54-Og-ANN" firstAttribute="leading" secondItem="ayi-G1-ABI" secondAttribute="trailing" constant="8" id="U4d-U0-s7H"/>
@@ -118,7 +119,8 @@
         </view>
     </objects>
     <resources>
-        <image name="1154188.png" width="1158" height="1012"/>
         <image name="avatar.png" width="192" height="192"/>
+        <image name="like_gray.png" width="128" height="128"/>
+        <image name="like_red.png" width="128" height="128"/>
     </resources>
 </document>

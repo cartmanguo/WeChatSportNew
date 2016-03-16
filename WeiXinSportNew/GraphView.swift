@@ -16,11 +16,11 @@ import UIKit
     @IBInspectable var graphStartColor: UIColor = UIColor.redColor()
     @IBInspectable var graphEndColor: UIColor = UIColor.greenColor()
     override func drawRect(rect: CGRect) {
-        let datas = [4123,10345,888,5689,2356,3598,1246]
+        let datas = [14123,10345,2888,8689,51356,13598,6523]
         let width = rect.width
         let height = rect.height
         
-                //set up background clipping area
+        //set up background clipping area
         let path = UIBezierPath(roundedRect: rect,
             byRoundingCorners: UIRectCorner.AllCorners,
             cornerRadii: CGSize(width: 8.0, height: 8.0))
@@ -63,7 +63,7 @@ import UIKit
             xPoints.append(x)
         }
         //cal yPoints
-        let topMargin:CGFloat = 30
+        let topMargin:CGFloat = 65
         let bottomMargin:CGFloat = 30
         let chartHeight = height - topMargin - bottomMargin
         let maxValue = datas.maxElement()
@@ -87,18 +87,16 @@ import UIKit
         linePath.stroke()
         let fillPath = linePath.copy()
         let lastPoint = xPoints.last
-        fillPath.addLineToPoint(CGPoint(x: lastPoint!, y: height-bottomMargin))
-        fillPath.addLineToPoint(CGPoint(x: xPoints.first!, y: height-bottomMargin))
+        fillPath.addLineToPoint(CGPoint(x: lastPoint!, y: height-bottomMargin/2))
+        fillPath.addLineToPoint(CGPoint(x: xPoints.first!, y: height-bottomMargin/2))
         fillPath.closePath()
         fillPath.addClip()
-        //UIColor.whiteColor().setFill()
-//        let rectPath = UIBezierPath(rect: self.bounds)
-//        rectPath.fill()
-        //fillPath.fill()
+
         let topY = yPoints.minElement()
-        print(CGPoint(x: leftMargin, y: topY!),CGPoint(x: leftMargin, y: height-bottomMargin))
         let graphGradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [graphStartColor.CGColor,graphEndColor.CGColor], [0.0,1.0])
-        CGContextDrawLinearGradient(context, graphGradient, CGPoint(x: leftMargin, y: topY!), CGPoint(x: leftMargin, y: height-bottomMargin/1.5), .DrawsBeforeStartLocation)
+        CGContextDrawLinearGradient(context, graphGradient, CGPoint(x: leftMargin, y: topY!), CGPoint(x: leftMargin, y: height-bottomMargin/2), .DrawsBeforeStartLocation)
+        //在调用了addClip后,绘图区域被定在了fillPath的路径内(即渐变的那部分)，所以画圆的时候可能就会只画出一半
+        //需要调用CGContextRestoreGState(context)
         CGContextRestoreGState(context)
         UIColor.whiteColor().setFill()
         for var i = 0;i<datas.count;i++
@@ -109,5 +107,14 @@ import UIKit
             let circle = UIBezierPath(ovalInRect: CGRect(x: point.x, y: point.y, width: 5, height: 5))
             circle.fill()
         }
+        let tenThousandYPoint = chartHeight + topMargin - chartHeight * 10000/CGFloat(maxValue!)
+        UIColor.whiteColor().colorWithAlphaComponent(0.3).setStroke()
+        linePath.lineWidth = 1
+        linePath.moveToPoint(CGPoint(x: leftMargin, y: topMargin/2))
+        linePath.addLineToPoint(CGPoint(x: width-leftMargin, y: topMargin/2))
+        linePath.stroke()
+        linePath.moveToPoint(CGPoint(x: xPoints[0], y: tenThousandYPoint))
+        linePath.addLineToPoint(CGPoint(x: width-leftMargin*3, y: tenThousandYPoint))
+        linePath.stroke()
     }
 }
