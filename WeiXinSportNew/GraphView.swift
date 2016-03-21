@@ -63,8 +63,8 @@ import UIKit
             xPoints.append(x)
         }
         //cal yPoints
-        let topMargin:CGFloat = 65
-        let bottomMargin:CGFloat = 30
+        let topMargin:CGFloat = 80
+        let bottomMargin:CGFloat = 45
         let chartHeight = height - topMargin - bottomMargin
         let maxValue = datas.maxElement()
         var yPoints:[CGFloat] = []
@@ -116,5 +116,31 @@ import UIKit
         linePath.moveToPoint(CGPoint(x: xPoints[0], y: tenThousandYPoint))
         linePath.addLineToPoint(CGPoint(x: width-leftMargin*3, y: tenThousandYPoint))
         linePath.stroke()
+        for var i = 0;i<datas.count;i++
+        {
+            var point = CGPoint(x: xPoints[i], y: height-bottomMargin/2)
+            let dateLabel = UILabel()
+            if i == 0
+            {
+                dateLabel.frame.origin = point
+                dateLabel.frame.size = CGSize(width: 40, height: 20)
+                dateLabel.text = "3月21"
+            }
+            else
+            {
+                point.x -= 10
+                dateLabel.center = point
+                dateLabel.frame.size = CGSize(width: 20, height: 20)
+                dateLabel.text = String(i)
+                //dateLabel.backgroundColor = UIColor.purpleColor()
+                dateLabel.textAlignment = .Center
+            }
+            
+            dateLabel.textColor = UIColor.whiteColor()
+            dateLabel.font = UIFont.systemFontOfSize(13)
+            self.addSubview(dateLabel)
+        }
+
+        
     }
 }

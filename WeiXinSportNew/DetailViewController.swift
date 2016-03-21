@@ -18,6 +18,9 @@ class DetailViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var beatLabel: UILabel!
     @IBOutlet weak var contentView: UIScrollView!
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var infoViewTopConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "我的主页"
@@ -32,10 +35,14 @@ class DetailViewController: UIViewController,UIScrollViewDelegate {
         contentView.sendSubviewToBack(blurBg)
         self.view.backgroundColor = UIColor.whiteColor()
         let avatarView = UIImageView()
-        avatarView.frame = CGRect(x: screenWidth/2-65/2, y: contentView.frame.size.height/2-32 - 65/2, width: 65, height: 65)
-        contentView.addSubview(avatarView)
+        
         avatarView.image = UIImage(named: "avatar")
+        infoViewTopConstraint.constant = screenHeight/2 - 64
         // Do any additional setup after loading the view.
+        containerView.layoutIfNeeded()
+        avatarView.frame.origin = CGPoint(x:containerView.center.x-64/2, y: screenHeight/2 - 64-64/2)
+        avatarView.frame.size = CGSize(width: 65, height: 65)
+        contentView.addSubview(avatarView)
     }
 
     override func didReceiveMemoryWarning() {
