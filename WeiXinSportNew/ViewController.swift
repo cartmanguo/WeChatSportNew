@@ -204,6 +204,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let userData = users[tableView.indexPathsForSelectedRows!.first!.row]
+        let detailVC = segue.destinationViewController as! DetailViewController
+        detailVC.user = userData
+    }
 
 }
 

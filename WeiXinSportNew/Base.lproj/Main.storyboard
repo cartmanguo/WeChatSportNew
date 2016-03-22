@@ -171,22 +171,10 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fih-CA-lJm">
-                                                                <rect key="frame" x="332" y="127" width="16" height="21"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="16" id="dcl-FY-Epd"/>
-                                                                    <constraint firstAttribute="height" constant="21" id="xFU-OE-c0R"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="fih-CA-lJm" secondAttribute="bottom" constant="38" id="0x9-ow-LuE"/>
                                                             <constraint firstAttribute="width" secondItem="Gwv-Tm-d24" secondAttribute="height" multiplier="349:186" id="4gL-2j-iVH"/>
-                                                            <constraint firstAttribute="trailing" secondItem="fih-CA-lJm" secondAttribute="trailing" constant="1" id="Ygg-ac-XCd"/>
                                                             <constraint firstAttribute="trailing" secondItem="p3v-Ts-jIK" secondAttribute="trailing" constant="8" id="Yzp-6W-dRI"/>
                                                             <constraint firstItem="p3v-Ts-jIK" firstAttribute="top" secondItem="Gwv-Tm-d24" secondAttribute="top" constant="9" id="k5S-kd-Ppw"/>
                                                             <constraint firstItem="qgF-mT-cNT" firstAttribute="top" secondItem="Gwv-Tm-d24" secondAttribute="top" constant="10" id="mRc-Td-RLU"/>
@@ -261,9 +249,10 @@
                         <outlet property="bgImageView" destination="bbU-N1-nqv" id="fM9-bs-cML"/>
                         <outlet property="containerView" destination="ee0-gT-3Zj" id="Xyd-gk-Xri"/>
                         <outlet property="contentView" destination="KAm-SK-xdl" id="721-tB-3vA"/>
-                        <outlet property="graphView" destination="Gwv-Tm-d24" id="Pd0-4l-rYW"/>
+                        <outlet property="graphView" destination="Gwv-Tm-d24" id="Kp3-t6-HlF"/>
                         <outlet property="infoView" destination="H8g-EZ-sNb" id="Gmc-yu-QF1"/>
                         <outlet property="infoViewTopConstraint" destination="RMD-VH-wLD" id="RCt-pB-6Lc"/>
+                        <outlet property="stepsLabel" destination="p3v-Ts-jIK" id="WOe-fv-mnS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vQ-Qk-VAG" userLabel="First Responder" sceneMemberID="firstResponder"/>

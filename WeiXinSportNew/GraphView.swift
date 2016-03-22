@@ -15,8 +15,10 @@ import UIKit
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     @IBInspectable var graphStartColor: UIColor = UIColor.redColor()
     @IBInspectable var graphEndColor: UIColor = UIColor.greenColor()
+    let tenThousandMarkLabel = UILabel()
+    var datas = [14123,232,5986,8689,21356,13598]
+    var initialDisplay = true
     override func drawRect(rect: CGRect) {
-        let datas = [14123,10345,2888,8689,51356,13598,6523]
         let width = rect.width
         let height = rect.height
         
@@ -64,9 +66,11 @@ import UIKit
         }
         //cal yPoints
         let topMargin:CGFloat = 80
-        let bottomMargin:CGFloat = 45
+        let bottomMargin:CGFloat = 25
         let chartHeight = height - topMargin - bottomMargin
         let maxValue = datas.maxElement()
+        let levels = maxValue! / 10000
+        let levelHeight = chartHeight / CGFloat(levels)
         var yPoints:[CGFloat] = []
         for var i = 0;i<datas.count;i++
         {
@@ -87,27 +91,36 @@ import UIKit
         linePath.stroke()
         let fillPath = linePath.copy()
         let lastPoint = xPoints.last
-        fillPath.addLineToPoint(CGPoint(x: lastPoint!, y: height-bottomMargin/2))
-        fillPath.addLineToPoint(CGPoint(x: xPoints.first!, y: height-bottomMargin/2))
+        fillPath.addLineToPoint(CGPoint(x: lastPoint!, y: height-bottomMargin))
+        fillPath.addLineToPoint(CGPoint(x: xPoints.first!, y: height-bottomMargin))
         fillPath.closePath()
         fillPath.addClip()
 
         let topY = yPoints.minElement()
         let graphGradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [graphStartColor.CGColor,graphEndColor.CGColor], [0.0,1.0])
-        CGContextDrawLinearGradient(context, graphGradient, CGPoint(x: leftMargin, y: topY!), CGPoint(x: leftMargin, y: height-bottomMargin/2), .DrawsBeforeStartLocation)
+        CGContextDrawLinearGradient(context, graphGradient, CGPoint(x: leftMargin, y: topY!), CGPoint(x: leftMargin, y: height-bottomMargin), .DrawsBeforeStartLocation)
         //在调用了addClip后,绘图区域被定在了fillPath的路径内(即渐变的那部分)，所以画圆的时候可能就会只画出一半
         //需要调用CGContextRestoreGState(context)
         CGContextRestoreGState(context)
         UIColor.whiteColor().setFill()
         for var i = 0;i<datas.count;i++
         {
+            var rectSize = CGSizeZero
+            if i == datas.count-1
+            {
+                rectSize = CGSize(width: 7, height: 7)
+            }
+            else
+            {
+                rectSize = CGSize(width: 5, height: 5)
+            }
             var point = CGPoint(x: xPoints[i], y: yPoints[i])
-            point.x -= 5/2
-            point.y -= 5/2
-            let circle = UIBezierPath(ovalInRect: CGRect(x: point.x, y: point.y, width: 5, height: 5))
+            point.x -= rectSize.width/2
+            point.y -= rectSize.width/2
+            let circle = UIBezierPath(ovalInRect: CGRect(x: point.x, y: point.y, width: rectSize.width, height: rectSize.height))
             circle.fill()
         }
-        let tenThousandYPoint = chartHeight + topMargin - chartHeight * 10000/CGFloat(maxValue!)
+        let tenThousandYPoint = height - bottomMargin - levelHeight
         UIColor.whiteColor().colorWithAlphaComponent(0.3).setStroke()
         linePath.lineWidth = 1
         linePath.moveToPoint(CGPoint(x: leftMargin, y: topMargin/2))
@@ -116,31 +129,39 @@ import UIKit
         linePath.moveToPoint(CGPoint(x: xPoints[0], y: tenThousandYPoint))
         linePath.addLineToPoint(CGPoint(x: width-leftMargin*3, y: tenThousandYPoint))
         linePath.stroke()
-        for var i = 0;i<datas.count;i++
+        tenThousandMarkLabel.frame.origin = CGPoint(x: width-leftMargin*3, y: tenThousandYPoint-10)
+        tenThousandMarkLabel.frame.size = CGSize(width: 20, height: 20)
+        tenThousandMarkLabel.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
+        tenThousandMarkLabel.text = "1W"
+        tenThousandMarkLabel.font = UIFont.systemFontOfSize(12)
+        self.addSubview(tenThousandMarkLabel)
+        let datesString = DateGenerator.genDates()
+        if initialDisplay
         {
-            var point = CGPoint(x: xPoints[i], y: height-bottomMargin/2)
-            let dateLabel = UILabel()
-            if i == 0
+            for var i = 0;i<datas.count;i++
             {
-                dateLabel.frame.origin = point
-                dateLabel.frame.size = CGSize(width: 40, height: 20)
-                dateLabel.text = "3月21"
+                var point = CGPoint(x: xPoints[i], y: height-bottomMargin)
+                let dateLabel = UILabel()
+                if i == 0
+                {
+                    dateLabel.frame.origin = point
+                    dateLabel.frame.size = CGSize(width: 40, height: 20)
+                    dateLabel.text = datesString[i]
+                }
+                else
+                {
+                    point.x -= 10
+                    dateLabel.center = point
+                    dateLabel.frame.size = CGSize(width: 20, height: 20)
+                    dateLabel.text = datesString[i]
+                    //dateLabel.backgroundColor = UIColor.purpleColor()
+                    dateLabel.textAlignment = .Center
+                }
+                
+                dateLabel.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
+                dateLabel.font = UIFont.systemFontOfSize(13)
+                self.addSubview(dateLabel)
             }
-            else
-            {
-                point.x -= 10
-                dateLabel.center = point
-                dateLabel.frame.size = CGSize(width: 20, height: 20)
-                dateLabel.text = String(i)
-                //dateLabel.backgroundColor = UIColor.purpleColor()
-                dateLabel.textAlignment = .Center
-            }
-            
-            dateLabel.textColor = UIColor.whiteColor()
-            dateLabel.font = UIFont.systemFontOfSize(13)
-            self.addSubview(dateLabel)
         }
-
-        
     }
 }
